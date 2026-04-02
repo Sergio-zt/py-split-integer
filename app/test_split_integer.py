@@ -2,8 +2,7 @@ from app.split_integer import split_integer
 
 
 def test_sum_of_the_parts_should_be_equal_to_value() -> None:
-    result = split_integer(6, 2)
-    assert sum(result) == 6
+    assert sum(split_integer(6, 2)) == 6
 
 
 def test_should_split_into_equal_parts_when_value_divisible_by_parts() -> None:
@@ -18,7 +17,7 @@ def test_parts_should_be_sorted_when_they_are_not_equal() -> None:
     result = split_integer(32, 6)
     assert len(result) == 6
     assert sum(result) == 32
-    assert result == sorted(result)
+    assert result == [5, 5, 5, 5, 6, 6]
     assert max(result) - min(result) <= 1
 
 
